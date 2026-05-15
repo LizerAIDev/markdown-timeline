@@ -1,0 +1,33 @@
+[project]
+name = "markdown-timeline-lizer"
+version = "0.1.0"
+description = "Convert YAML/Markdown events into beautiful HTML timelines / 将事件列表转为美观的时间线 HTML"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Lizer", email = "lizer@lizeraidev.github.io"}]
+keywords = ["markdown", "timeline", "html", "generator", "yaml"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.9"
+dependencies = ["pyyaml"]
+
+[project.scripts]
+timeline = "main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

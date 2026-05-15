@@ -1,99 +1,96 @@
 # Markdown Timeline Generator | 时间线生成器
 
-[English](#english) · [中文](#中文)
+[![CI](https://github.com/LizerAIDev/markdown-timeline/actions/workflows/ci.yml/badge.svg)](https://github.com/LizerAIDev/markdown-timeline/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Convert YAML/Markdown event lists into beautiful, responsive HTML timelines.
+
+将 YAML/Markdown 事件列表转为美观的响应式 HTML 时间线。
 
 ---
 
-## English
-
-Convert a simple YAML event list into a beautiful, responsive HTML timeline — perfect for project roadmaps, changelogs, and history pages.
-
-### Features
-
-- **Simple YAML input** — define events in a clean, readable format
-- **Dark theme** — modern, responsive design with hover effects
-- **Mobile-friendly** — adapts to any screen size
-- **Zero JS** — pure HTML/CSS, no JavaScript dependencies
-
-### Quick Start
+### Example / 示例
 
 ```bash
-# Install dependency
-pip install pyyaml
-
-# Generate sample timeline
-python main.py
-
-# Generate from your YAML file
-python main.py events.yaml
+$ timeline
+Timeline generated: timeline.html
+  Events: 6
+  Date range: 2024-01-15 → 2024-12-01
 ```
 
-### Input Format
+**Output** → [dark-themed HTML timeline](https://lizeraidev.github.io/markdown-timeline/timeline.html):
+
+![Timeline preview](https://img.shields.io/badge/📅-Timeline_Generator-bc8cff?style=for-the-badge)
+
+## Features / 功能
+
+| Feature | Description |
+|---------|-------------|
+| 📅 YAML input | Define events in simple YAML format |
+| 🎨 Dark theme | GitHub-dark styled responsive timeline |
+| 📱 Mobile-friendly | CSS media queries for small screens |
+| 📦 Sample data | Built-in sample events for quick start |
+| ⚡ Lightweight | Only dependency: PyYAML |
+
+## Quick Start / 快速开始
+
+### Generate sample timeline
+
+```bash
+timeline
+```
+
+### Generate from your YAML file
+
+```bash
+# Create events.yaml
+cat > events.yaml << 'EOF'
+events:
+  - date: 2024-01-15
+    title: Project Kickoff
+    description: Initial concept and planning
+  - date: 2024-06-01
+    title: Beta Release
+    description: Public beta launch
+  - date: 2024-12-01
+    title: v1.0 Launch
+    description: Official stable release
+EOF
+
+timeline events.yaml
+```
+
+### Install / 安装
+
+```bash
+pip install markdown-timeline-lizer
+timeline events.yaml
+```
+
+## YAML Format / YAML 格式
 
 ```yaml
 events:
-  - date: "2024-01-15"
-    title: "Project Kickoff"
-    description: "Initial planning phase"
-  - date: "2024-06-01"
-    title: "Launch Day"
-    description: "Public release"
+  - date: YYYY-MM-DD
+    title: Event Title
+    description: Event description
 ```
 
-### Output
+## Tech Stack / 技术栈
 
-A dark-themed, responsive HTML timeline with:
-- Alternating left/right layout
-- Hover animations
-- Mobile-responsive design
-- No external dependencies
+- **Python 3.9+**
+- **PyYAML** — YAML parser
+- **Pure CSS** — No JavaScript, no frameworks
+
+## License / 许可证
+
+[MIT License](LICENSE)
 
 ---
 
-## 中文
+<div align="center">
 
-将简单的 YAML 事件列表转换为精美、响应式的 HTML 时间线——非常适合项目路线图、变更日志和历史页面。
+Made with ❤️ by [Lizer](https://github.com/LizerAIDev) | Powered by [Hermes Agent](https://hermes-agent.nousresearch.com)
 
-### 功能
-
-- **简洁的 YAML 输入** — 以清晰易读的格式定义事件
-- **暗色主题** — 现代响应式设计，带悬停效果
-- **移动端友好** — 适配任何屏幕尺寸
-- **零 JS** — 纯 HTML/CSS，无 JavaScript 依赖
-
-### 快速开始
-
-```bash
-# 安装依赖
-pip install pyyaml
-
-# 生成示例时间线
-python main.py
-
-# 从你的 YAML 文件生成
-python main.py events.yaml
-```
-
-### 输入格式
-
-```yaml
-events:
-  - date: "2024-01-15"
-    title: "项目启动"
-    description: "初始规划阶段"
-  - date: "2024-06-01"
-    title: "发布日"
-    description: "公开发布"
-```
-
-### 输出
-
-一个暗色主题的响应式 HTML 时间线：
-- 左右交替布局
-- 悬停动画效果
-- 移动端自适应
-- 无外部依赖
-
----
-
-*By Lizer | [github.com/LizerAIDev](https://github.com/LizerAIDev)*
+</div>
